@@ -1,0 +1,32 @@
+# Node.js with Vue
+# Build a Node.js project that uses Vue.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+- '*'
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: CmdLine@2
+  displayName: Git Pull
+  inputs:
+    script: 'git pull https://github.com/JacobBN/portfolio.git $(Build.SourceBranchName)'
+- task: Npm@1
+  displayName: Install Dependencies
+  inputs:
+    command: 'install'
+- task: CmdLine@2
+  displayName: Run Unit Tests
+  inputs:
+    script: 'CI=true npm run test:unit'
+- task: CmdLine@2
+  displayName: Run E2E Tests
+  inputs:
+    script: 'CI=true npm run test:e2e'
+- task: CmdLine@2
+  displayName: Git Push
+  inputs:
+    script: 'git push https://github.com/JacobBN/portfolio.git $(Build.SourceBranchName)'
