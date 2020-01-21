@@ -4,7 +4,8 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-- '*'
+- master
+- development
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -23,10 +24,9 @@ steps:
   inputs:
     script: 'CI=true npm run test:unit'
 - task: CmdLine@2
-  displayName: Run E2E Tests
-  inputs:
-    script: 'CI=true npm run test:e2e'
-- task: CmdLine@2
   displayName: Git Push
   inputs:
-    script: 'git push https://github.com/JacobBN/portfolio.git $(Build.SourceBranchName)'
+    script: |
+    git config --global user.email "$(email)"
+    git config --global user.name "$(name)"
+    git push https://github.com/JacobBN/portfolio.git $(Build.SourceBranchName)
