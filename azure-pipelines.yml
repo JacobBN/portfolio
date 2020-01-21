@@ -14,12 +14,10 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- checkout: self
-  persistCredentials: true
 - task: CmdLine@2
   displayName: Git Pull
   inputs:
-    script: 'git pull https://github.com/JacobBN/portfolio.git $(Build.SourceBranchName)'
+    script: 'git pull https://$(pat)@github.com/JacobBN/portfolio.git $(Build.SourceBranchName)'
 - task: Npm@1
   displayName: Install Dependencies
   inputs:
@@ -31,8 +29,4 @@ steps:
 - task: CmdLine@2
   displayName: Git Push
   inputs:
-    script: 'git config --global user.email "$(email)" &&
-             git config --global user.name "$(name)" &&
-             git push https://github.com/JacobBN/portfolio.git HEAD:$(Build.SourceBranchName) && 
-             git config --global --unset user.email && 
-             git config --global --unset user.name'
+    script: 'git push https://$(pat)@github.com/JacobBN/portfolio.git $(Build.SourceBranchName)'
