@@ -30,6 +30,6 @@ steps:
   displayName: Git Push
   inputs:
     script: '|
-    git config --global user.email "$(email)"
-    git config --global user.name "$(name)"
+    git config --global user.email "$(email)" &&
+    git config --global user.name "$(name)" &&
     git push https://github.com/JacobBN/portfolio.git $(Build.SourceBranchName)'
