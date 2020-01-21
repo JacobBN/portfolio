@@ -23,10 +23,6 @@ steps:
   inputs:
     script: 'CI=true npm run test:unit'
 - task: CmdLine@2
-  displayName: Run E2E Tests
-  inputs:
-    script: 'CI=true npm run test:e2e'
-- task: CmdLine@2
   displayName: Git Push
   inputs:
     script: 'git push https://github.com/JacobBN/portfolio.git $(Build.SourceBranchName)'
