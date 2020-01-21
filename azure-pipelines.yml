@@ -31,4 +31,4 @@ steps:
   inputs:
     script: 'git config --global user.email "$(email)" &&
              git config --global user.name "$(name)" &&
-             git push https://github.com/JacobBN/portfolio.git $(Build.SourceBranchName)'
+             git push https://github.com/JacobBN/portfolio.git HEAD:$(Build.SourceBranchName)'
