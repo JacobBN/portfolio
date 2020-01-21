@@ -4,8 +4,11 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-- master
-- development
+  branches:
+    include:
+    - '*'
+    exclude:
+    - features/*
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -18,7 +21,7 @@ steps:
 - task: CmdLine@2
   displayName: Git Pull
   inputs:
-    script: 'git pull https://github.com/JacobBN/portfolio.git $(Build.SourceBranchName)'
+    script: 'git pull https://$(pat)@github.com/JacobBN/portfolio.git $(Build.SourceBranchName)'
 - task: Npm@1
   displayName: Install Dependencies
   inputs:
@@ -30,7 +33,4 @@ steps:
 - task: CmdLine@2
   displayName: Git Push
   inputs:
-    script: |
-    git config --global user.email "$(email)"
-    git config --global user.name "$(name)"
-    git push https://github.com/JacobBN/portfolio.git $(Build.SourceBranchName)'
+    script: 'git push https://$(pat)@github.com/JacobBN/portfolio.git HEAD:$(Build.SourceBranchName)'
