@@ -14,6 +14,8 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- checkout: self
+  persistCredentials: true
 - task: CmdLine@2
   displayName: Git Pull
   inputs:
@@ -31,4 +33,6 @@ steps:
   inputs:
     script: 'git config --global user.email "$(email)" &&
              git config --global user.name "$(name)" &&
-             git push https://github.com/JacobBN/portfolio.git HEAD:$(Build.SourceBranchName)'
+             git push https://github.com/JacobBN/portfolio.git HEAD:$(Build.SourceBranchName) && 
+             git config --global --unset user.email && 
+             git config --global --unset user.name'
