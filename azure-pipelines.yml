@@ -29,4 +29,4 @@ steps:
 - task: CmdLine@2
   displayName: Git Push
   inputs:
-    script: 'git push https://$(pat)@github.com/JacobBN/portfolio.git $(Build.SourceBranchName)'
+    script: 'git push https://$(pat)@github.com/JacobBN/portfolio.git HEAD:$(Build.SourceBranchName)'
