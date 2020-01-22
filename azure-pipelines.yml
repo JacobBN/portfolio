@@ -14,7 +14,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  - group: 'git'
+  - group: 'git-values'
 
 steps:
 - task: CmdLine@2
