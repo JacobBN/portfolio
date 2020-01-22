@@ -3,7 +3,7 @@
     <h2>Portfolio</h2>
     <div class="portfolio-boxes" id="lines"></div>
     <div class="portfolio-boxes" id="content">
-      <b-row id="icons">
+      <b-row>
         <b-col>
           <font-awesome-icon icon="biohazard" size="10x"></font-awesome-icon>
           <p>There is a biohazard!</p>
@@ -20,16 +20,6 @@
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  data: function () {
-    return {
-      message: 'Welcome!'
-    }
-  }
-}
-</script>
 
 <style scoped>
 #portfolio-overview {
@@ -57,7 +47,7 @@ h2 {
 #content {
   width: 75%;
 }
-#icons p {
+#content p {
   margin-top: 16px;
   font-weight: bold;
 }
