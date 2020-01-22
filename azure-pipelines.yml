@@ -13,10 +13,6 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-variables:
-# a variable group
-- group: git
-
 steps:
 - task: CmdLine@2
   displayName: Git Pull
