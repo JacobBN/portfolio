@@ -1,14 +1,14 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
     <router-view/>
   </div>
 </template>
 
 <style>
+body {
+  margin: 0;
+  scrollbar-width: thin; /* https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-width */
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -16,17 +16,17 @@
   text-align: center;
   color: #2c3e50;
 }
-
-#nav {
-  padding: 30px;
+.display-box {
+  display: inline-block;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+h1 {
+  font-size: 3em;
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+h2 {
+  font-size: 2.5em;
 }
 </style>
