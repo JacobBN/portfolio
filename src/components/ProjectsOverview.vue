@@ -1,8 +1,8 @@
 <template>
-  <div class="display-box" id="portfolio-overview">
-    <h2>Portfolio</h2>
-    <div class="portfolio-boxes" id="lines"></div>
-    <div class="portfolio-boxes" id="content">
+  <div class="display-box" id="projects-overview">
+    <h2>Projects</h2>
+    <div class="projects-boxes" id="lines"></div>
+    <div class="projects-boxes" id="content">
       <b-row>
         <b-col>
           <font-awesome-icon icon="biohazard" size="10x"></font-awesome-icon>
@@ -22,7 +22,7 @@
 </template>
 
 <style scoped>
-#portfolio-overview {
+#projects-overview {
   position: relative;
 }
 h2 {
@@ -30,9 +30,8 @@ h2 {
   top: 50px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 2.3em;
 }
-.portfolio-boxes {
+.projects-boxes {
   position: absolute;
   top: 50%;
   left: 50%;

@@ -2,7 +2,7 @@
 
 import { expect } from 'chai'
 import { shallowMount, createLocalVue } from '@vue/test-utils'
-import PortfolioOverview from '@/components/PortfolioOverview.vue'
+import ProjectsOverview from '@/components/ProjectsOverview.vue'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { BootstrapVue } from 'bootstrap-vue'
 
@@ -11,12 +11,12 @@ before(() => {
   const localVue = createLocalVue()
   localVue.component('font-awesome-icon', FontAwesomeIcon)
   localVue.use(BootstrapVue)
-  wrapper = shallowMount(PortfolioOverview, { localVue })
+  wrapper = shallowMount(ProjectsOverview, { localVue })
 })
 
-describe('components/PortfolioOverview.vue', () => {
+describe('components/ProjectsOverview.vue', () => {
   it('DOM Smoke Tests', () => {
-    expect(wrapper.contains('#portfolio-overview')).equals(true)
+    expect(wrapper.contains('#projects-overview')).equals(true)
     expect(wrapper.contains('#lines')).equals(true)
     expect(wrapper.contains('#content')).equals(true)
   })

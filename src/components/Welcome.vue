@@ -5,16 +5,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  data: function () {
-    return {
-      message: 'Welcome!'
-    }
-  }
-}
-</script>
-
 <style scoped>
 #welcome {
   position: relative;

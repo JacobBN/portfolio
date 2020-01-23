@@ -4,7 +4,8 @@ import { expect } from 'chai'
 import { shallowMount } from '@vue/test-utils'
 import Home from '@/views/Home.vue'
 import Welcome from '@/components/Welcome.vue'
-import PortfolioOverview from '@/components/PortfolioOverview.vue'
+import ProjectsOverview from '@/components/ProjectsOverview.vue'
+import About from '@/components/About.vue'
 
 let wrapper
 before(() => {
@@ -14,6 +15,7 @@ before(() => {
 describe('views/Home.vue', () => {
   it('DOM Smoke Tests', () => {
     expect(wrapper.contains(Welcome)).equals(true)
-    expect(wrapper.contains(PortfolioOverview)).equals(true)
+    expect(wrapper.contains(ProjectsOverview)).equals(true)
+    expect(wrapper.contains(About)).equals(true)
   })
 })

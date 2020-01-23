@@ -1,19 +1,22 @@
 <template>
   <div class="home">
     <Welcome></Welcome>
-    <PortfolioOverview></PortfolioOverview>
+    <ProjectsOverview></ProjectsOverview>
+    <About></About>
   </div>
 </template>
 
 <script>
 import Welcome from '@/components/Welcome.vue'
-import PortfolioOverview from '@/components/PortfolioOverview.vue'
+import ProjectsOverview from '@/components/ProjectsOverview.vue'
+import About from '@/components/About.vue'
 
 export default {
   name: 'home',
   components: {
     Welcome,
-    PortfolioOverview
+    ProjectsOverview,
+    About
   }
 }
 </script>
