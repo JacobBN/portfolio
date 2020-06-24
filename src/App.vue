@@ -9,6 +9,9 @@ body {
   margin: 0;
   scrollbar-width: thin; /* https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-width */
 }
+::-webkit-scrollbar { /* https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar */
+  width: 0px;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

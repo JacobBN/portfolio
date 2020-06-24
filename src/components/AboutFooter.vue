@@ -1,5 +1,5 @@
 <template>
-  <div class="display-box" id="about">
+  <div class="display-box" id="about-footer">
     <h2>About</h2>
     <b-card id="about-card" v-bind:title="activeTab" body-class="text-center" header-tag="nav">
       <template v-slot:header>
@@ -13,34 +13,39 @@
           <b-nav-item @click="toggleActiveTab('Education')" v-bind:active="activeTab === 'Education'">
             Education
           </b-nav-item>
-          <b-nav-item @click="toggleActiveTab('Contact Info')" v-bind:active="activeTab === 'Contact Info'">
-            Contact Info
-          </b-nav-item>
         </b-nav>
       </template>
 
       <b-card-text v-show="activeTab === 'General'">
         Some info here on the general tab.
+
+        <ContactInfo></ContactInfo>
       </b-card-text>
 
       <b-card-text v-show="activeTab === 'Experience'">
         Some info here on this other experience tab.
+
+        <ContactInfo></ContactInfo>
       </b-card-text>
 
       <b-card-text v-show="activeTab === 'Education'">
         Look at all that education.
-      </b-card-text>
 
-      <b-card-text v-show="activeTab === 'Contact Info'">
-        Let's put some social media buttons here.
+        <ContactInfo></ContactInfo>
       </b-card-text>
     </b-card>
-    <img alt="A lake" src="../assets/lake.jpg" />
+    <img alt="Jacob at Arches National Park" src="../assets/JBN-Arches.jpg" draggable="false"/>
   </div>
 </template>
 
 <script>
+import ContactInfo from '@/components/ContactInfo.vue'
+
 export default {
+  name: 'about-footer',
+  components: {
+    ContactInfo
+  },
   data: function () {
     return {
       activeTab: 'General'
@@ -55,7 +60,7 @@ export default {
 </script>
 
 <style scoped>
-#about {
+#about-footer {
   position: relative;
   padding-top: 24px;
 }

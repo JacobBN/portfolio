@@ -1,22 +1,28 @@
 <template>
   <div class="home">
-    <Welcome></Welcome>
-    <ProjectsOverview></ProjectsOverview>
-    <About></About>
+    <Scroll-View>
+      <WelcomeHeader key="WelcomeHeader"></WelcomeHeader>
+      <ProjectsOverview key="ProjectsOverview"></ProjectsOverview>
+      <AboutFooter key="AboutFooter"></AboutFooter>
+
+      <Navigation v-bind:items="['WelcomeHeader', 'ProjectsOverview', 'AboutFooter']"></Navigation>
+    </Scroll-View>
   </div>
 </template>
 
 <script>
-import Welcome from '@/components/Welcome.vue'
+import WelcomeHeader from '@/components/WelcomeHeader.vue'
 import ProjectsOverview from '@/components/ProjectsOverview.vue'
-import About from '@/components/About.vue'
+import AboutFooter from '@/components/AboutFooter.vue'
+import Navigation from '@/components/Navigation.vue'
 
 export default {
   name: 'home',
   components: {
-    Welcome,
+    WelcomeHeader,
     ProjectsOverview,
-    About
+    AboutFooter,
+    Navigation
   }
 }
 </script>

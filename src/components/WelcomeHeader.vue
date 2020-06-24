@@ -1,7 +1,7 @@
 <template>
   <div class="display-box" id="welcome">
     <h1>Welcome to my Development Site!</h1>
-    <img alt="A lake" src="../assets/lake.jpg" />
+    <img alt="Jacob at Arches National Park" src="../assets/JBN-Arches.jpg" draggable="false"/>
   </div>
 </template>
 

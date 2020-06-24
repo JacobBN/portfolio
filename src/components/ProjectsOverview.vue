@@ -14,7 +14,7 @@
         </b-col>
         <b-col>
           <font-awesome-icon icon="chart-pie" size="10x"></font-awesome-icon>
-          <p>There is a chart pie!</p>
+          <p>There is a pie chart!</p>
         </b-col>
       </b-row>
     </div>
